@@ -59,3 +59,9 @@
     margin: auto;
     position: relative;
 }
+
+.tab-pane.fade.show.active {
+    color: #cdeda7;
+    font-weight: bold;
+    text-transform: uppercase;
+}
