@@ -65,3 +65,418 @@
     font-weight: bold;
     text-transform: uppercase;
 }
+
+
+/* ===== ESTILOS PARA BOTÓN DE FORMULARIO ===== */
+
+.btn-formulario {
+    background: linear-gradient(135deg, #dc3545 0%, #bb2d3b 100%);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-formulario::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #bb2d3b 0%, #dc3545 100%);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.btn-formulario:hover::before {
+    left: 0;
+}
+
+.btn-formulario:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+    color: white;
+}
+
+.btn-formulario:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 15px rgba(220, 53, 69, 0.4);
+}
+
+/* Icono del botón */
+.btn-formulario i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .btn-formulario {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== ESTILOS ESPECÍFICOS PARA FORMULARIO ===== */
+
+/* Contenedor principal del formulario */
+.form-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 50px auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    color: #333;
+}
+
+/* Encabezado del formulario */
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #dc3545;
+    padding-bottom: 20px;
+}
+
+.form-title {
+    color: #dc3545;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.form-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Estilos para los elementos del formulario */
+.formulario-restaurante .form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.formulario-restaurante .form-control, 
+.formulario-restaurante .form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.formulario-restaurante .form-control:focus, 
+.formulario-restaurante .form-select:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+/* Checkboxes y radios personalizados */
+.formulario-restaurante .form-check-input {
+    width: 1.2em;
+    height: 1.2em;
+    margin-top: 0.1em;
+}
+
+.formulario-restaurante .form-check-input:checked {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.formulario-restaurante .form-check-label {
+    margin-left: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Switch personalizado */
+.formulario-restaurante .form-switch .form-check-input {
+    width: 3em;
+    height: 1.5em;
+}
+
+.formulario-restaurante .form-switch .form-check-input:checked {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+/* Botones del formulario */
+.btn-enviar {
+    background: linear-gradient(135deg, #dc3545 0%, #bb2d3b 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 15px 40px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.btn-enviar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}
+
+.btn-limpiar {
+    background: #6c757d;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 40px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-limpiar:hover {
+    background: #5a6268;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.3);
+}
+
+/* Validación */
+.formulario-restaurante .is-invalid {
+    border-color: #dc3545;
+}
+
+.formulario-restaurante .is-valid {
+    border-color: #198754;
+}
+
+.formulario-restaurante .invalid-feedback {
+    font-size: 0.875rem;
+    color: #dc3545;
+    font-weight: 500;
+}
+
+.formulario-restaurante .valid-feedback {
+    font-size: 0.875rem;
+    color: #198754;
+    font-weight: 500;
+}
+
+/* Grupos de formulario */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Textarea personalizado */
+.formulario-restaurante textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Estilos para selects múltiples */
+.formulario-restaurante select[multiple] {
+    min-height: 120px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 25px;
+        margin: 30px 15px;
+        border-radius: 15px;
+    }
+    
+    .form-header {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+    }
+    
+    .btn-enviar,
+    .btn-limpiar {
+        padding: 12px 25px;
+        font-size: 1rem;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .formulario-restaurante .form-control,
+    .formulario-restaurante .form-select {
+        padding: 10px 12px;
+    }
+}
+
+/* Estados de carga */
+.btn-enviar:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Estilos para campos requeridos */
+.formulario-restaurante .required::after {
+    content: " *";
+    color: #dc3545;
+}
+
+/* Estilos para tooltips de validación */
+.tooltip-inner {
+    background-color: #dc3545;
+    font-weight: 500;
+}
+
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: #dc3545;
+}
+
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: #dc3545;
+}
+
+.tooltip.bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: #dc3545;
+}
+
+.tooltip.bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: #dc3545;
+}
+
+/* Estilos personalizados para el Range Input */
+.form-range {
+    width: 100%;
+    height: 1.5rem;
+    padding: 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-range:focus {
+    outline: none;
+}
+
+/* Track - la barra de fondo */
+.form-range::-webkit-slider-track {
+    width: 100%;
+    height: 0.5rem;
+    background: linear-gradient(90deg, #198754, #ffc107, #dc3545);
+    border-radius: 1rem;
+    border: 1px solid #495057;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.form-range::-moz-range-track {
+    width: 100%;
+    height: 0.5rem;
+    background: linear-gradient(90deg, #198754, #ffc107, #dc3545);
+    border-radius: 1rem;
+    border: 1px solid #495057;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Thumb - el control deslizante */
+.form-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #6c757d, #495057);
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4), 
+                0 0 0 2px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-range::-moz-range-thumb {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #6c757d, #495057);
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4), 
+                0 0 0 2px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Efectos hover y focus */
+.form-range::-webkit-slider-thumb:hover {
+    background: linear-gradient(145deg, #5a6268, #3d4348);
+    transform: scale(1.1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5), 
+                0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.form-range::-moz-range-thumb:hover {
+    background: linear-gradient(145deg, #5a6268, #3d4348);
+    transform: scale(1.1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5), 
+                0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.form-range:focus::-webkit-slider-thumb {
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    border-color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25),
+                0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.form-range:focus::-moz-range-thumb {
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    border-color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25),
+                0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para el texto del form */
+.form-range + .form-text {
+    font-size: 0.875rem;
+    color: #e9ecef !important;
+    margin-top: 0.5rem;
+}
+
+/* Estilos para la etiqueta del range */
+.form-range-label {
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+/* Indicadores de valor (opcional) */
+.range-value-indicators {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    color: #adb5bd;
+    font-size: 0.75rem;
+}
+
+.range-value-indicators span {
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.25rem;
+    background: rgba(255, 255, 255, 0.1);
+}

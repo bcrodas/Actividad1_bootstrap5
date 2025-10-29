@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario - Restaurante Sazón del Saber</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="public/css/estilos.css">
+    
+</head>
+<body>
+    <!-- Botón de regreso al inicio -->
+    <div class="container mt-3">
+        <a href="pagina_web.html" class="btn btn-volver">
+            <i class="bi bi-arrow-left"></i> Volver al Inicio
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-header">
+                <h1 class="form-title">Formulario de Registro</h1>
+                <p class="form-subtitle">Complete sus datos para disfrutar de nuestros servicios</p>
+            </div>
+            
+            <form class="needs-validation formulario-restaurante" novalidate>
+                <div class="row">
+                    <!-- Campo de texto -->
+                    <div class="col-md-6 form-group">
+                        <label for="nombre" class="form-label required">Nombre completo</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa tu nombre completo.
+                        </div>
+                    </div>
+                    
+                    <!-- Campo de email -->
+                    <div class="col-md-6 form-group">
+                        <label for="email" class="form-label required">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa un correo electrónico válido.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <!-- Campo de contraseña -->
+                    <div class="col-md-6 form-group">
+                        <label for="password" class="form-label required">Contraseña</label>
+                        <input type="password" class="form-control" id="password" required minlength="6">
+                        <div class="invalid-feedback">
+                            La contraseña debe tener al menos 6 caracteres.
+                        </div>
+                    </div>
+                    
+                    <!-- Campo de número -->
+                    <div class="col-md-6 form-group">
+                        <label for="edad" class="form-label required">Edad</label>
+                        <input type="number" class="form-control" id="edad" min="18" max="100" required>
+                        <div class="invalid-feedback">
+                            Debes tener entre 18 y 100 años para registrarte.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <!-- Campo de URL -->
+                    <div class="col-md-6 form-group">
+                        <label for="sitio-web" class="form-label">Sitio web personal</label>
+                        <input type="url" class="form-control" id="sitio-web">
+                        <div class="invalid-feedback">
+                            Por favor ingresa una URL válida.
+                        </div>
+                    </div>
+                    
+                    <!-- Campo de fecha -->
+                    <div class="col-md-6 form-group">
+                        <label for="fecha-nacimiento" class="form-label required">Fecha de nacimiento</label>
+                        <input type="date" class="form-control" id="fecha-nacimiento" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa tu fecha de nacimiento.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Textarea -->
+                <div class="form-group">
+                    <label for="comentarios" class="form-label">Comentarios adicionales</label>
+                    <textarea class="form-control" id="comentarios" rows="4" placeholder="¿Alguna preferencia especial o comentario?"></textarea>
+                </div>
+                
+                <!-- Select -->
+                <div class="form-group">
+                    <label for="pais" class="form-label required">País de residencia</label>
+                    <select class="form-select" id="pais" required>
+                        <option value="" selected disabled>Selecciona tu país</option>
+                        <option value="ecuador">Ecuador</option>
+                        <option value="colombia">Colombia</option>
+                        <option value="peru">Perú</option>
+                        <option value="mexico">México</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor selecciona tu país de residencia.
+                    </div>
+                </div>
+                
+                <!-- Checkboxes -->
+                <div class="form-group">
+                    <label class="form-label">Preferencias culinarias (selecciona todas las que apliquen)</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="comida-ecuatoriana">
+                        <label class="form-check-label" for="comida-ecuatoriana">
+                            Comida ecuatoriana
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="comida-mariscos">
+                        <label class="form-check-label" for="comida-mariscos">
+                            Mariscos
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="comida-vegetariana">
+                        <label class="form-check-label" for="comida-vegetariana">
+                            Opciones vegetarianas
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Radios -->
+                <div class="form-group">
+                    <label class="form-label required">¿Con qué frecuencia visitas nuestro restaurante?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="frecuencia" id="frecuencia-semanal" value="semanal" required>
+                        <label class="form-check-label" for="frecuencia-semanal">
+                            Semanalmente
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="frecuencia" id="frecuencia-mensual" value="mensual">
+                        <label class="form-check-label" for="frecuencia-mensual">
+                            Mensualmente
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="frecuencia" id="frecuencia-ocasional" value="ocasional">
+                        <label class="form-check-label" for="frecuencia-ocasional">
+                            Ocasionalmente
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="frecuencia" id="frecuencia-primera" value="primera">
+                        <label class="form-check-label" for="frecuencia-primera">
+                            Primera vez
+                        </label>
+                    </div>
+                    <div class="invalid-feedback">
+                        Por favor selecciona una opción.
+                    </div>
+                </div>
+                
+                <!-- Switch (toggle) -->
+                <div class="form-group">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="notificaciones" checked>
+                        <label class="form-check-label" for="notificaciones">
+                            Deseo recibir notificaciones sobre promociones y nuevos platillos
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Botones de envío -->
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                    <button type="reset" class="btn btn-limpiar me-md-2">Limpiar formulario</button>
+                    <button type="submit" class="btn btn-enviar">Enviar información</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script de validación -->
+    <script>
+        (function () {
+            'use strict'
+            
+            var forms = document.querySelectorAll('.needs-validation')
+            
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+</html>

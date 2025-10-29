@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>
-        Restaurante
-    </title>
+    <title>Restaurante</title>
 
     <style>
         body {
@@ -15,11 +12,12 @@
         }
     </style>
 
-    <link rel="stylesheet" href="public/vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <!-- ✅ SOLO CDN DE BOOTSTRAP - ELIMINA EL CSS LOCAL -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="public/css/estilos.css">
-
 </head>
 <body>
+
     <!-- Navbar Responsive -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container-fluid">
@@ -35,7 +33,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Menú</a>
                     </li>
-                    <!-- Dropdown en Navbar -->
+                    <!-- Dropdown en Navbar - KEVIN SHAÑAY -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Categorías
@@ -68,7 +66,7 @@
         </ol>
     </nav>
 
-        <!-- ✅ INSERTAR AQUÍ: BOTÓN PARA ABRIR EL PANEL LATERAL (OFFCANVAS) -->
+    <!-- ✅ BOTÓN PARA ABRIR EL PANEL LATERAL (OFFCANVAS) -->
     <button class="btn btn-dark m-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasPanel">
         Menú lateral
     </button>
@@ -97,6 +95,12 @@
     <p class="Introducción">La mejor comida del mundo la encontrarás aquí</p>
     <p class="Descripción">¡Disfruta de nuestros platillos!</p>
 
+      <!-- BOTÓN DE FORMULARIO INTEGRADO -->
+    <div class="container text-center mb-4">
+        <a href="formulario.html" class="btn btn-formulario">
+            <i class="bi bi-pencil-square"></i> Formulario de Registro
+        </a>
+    </div>
     <!-- Botones existentes -->
     <button class="btn btn-primary">Platos</button>
     <button class="btn btn-secondary">Reservar</button>
@@ -139,7 +143,7 @@
         <button type="button" class="btn btn-outline-primary">Recepciones</button>
     </div>
 
-     <!-- Navs / Tabs / Pills -->
+    <!-- Navs / Tabs / Pills -->
     <div class="container mt-4">
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -166,26 +170,19 @@
     </div>
 
     <div class="container">
-
         <div class="d-flex justify-content-center gap-2">
-            <!-- ✅ INSERTAR AQUÍ: TOOLTIP (por ejemplo en un botón de perfil) -->
             <button class="btn btn-primary m-2" data-bs-toggle="tooltip" title="Ver perfil del usuario">
                 Perfil
             </button>
 
-            <!-- ✅ INSERTAR AQUÍ: POPOVER -->
             <button class="btn btn-secondary m-2" data-bs-toggle="popover"
                     title="Cuenta del cliente"
                     data-bs-content="Consulta tu saldo y puntos acumulados.">
                 Cuenta
             </button>
 
-            <!-- ✅ INSERTAR AQUÍ: BOTÓN PARA MOSTRAR EL TOAST -->
             <button class="btn btn-warning m-2" id="toastBtn">Promociones</button>
 
-
-
-            <!-- Botón para activar Modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Ver Promociones Especiales
             </button>
@@ -320,7 +317,7 @@
         </nav>
    </div>
 
-       <!-- Alert existente -->
+    <!-- Alert existente -->
     <div class="alert alert-primary d-flex align-items-center" role="alert">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
             <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
@@ -330,60 +327,59 @@
         </div>
     </div>
 
- <!-- Formulario con validación -->
-<h3 class="text-center text-light mb-4">Registro del usuario</h3>
-<form class="row g-3">
-  <div class="col-md-6">
-    <label for="validationServer01" class="form-label text-light">Nombre</label>
-    <input type="text" class="form-control is-valid" id="validationServer01" value="Luisa" required>
-    <div class="valid-feedback text-light">
-      ¡Se ve bien!
-    </div>
-  </div>
-  <div class="col-md-6">
-    <label for="validationServer02" class="form-label text-light">Apellido</label>
-    <input type="text" class="form-control is-valid" id="validationServer02" value="Zambrano" required>
-    <div class="valid-feedback text-light">
-      ¡Se ve bien!
-    </div>
-  </div>
-  <div class="col-md-6">
-    <label for="validationServer03" class="form-label text-light">Correo electrónico</label>
-    <input type="email" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
-    <div id="validationServer03Feedback" class="invalid-feedback text-light">
-      Por favor ingresa un correo válido.
-    </div>
-  </div>
-  <div class="col-md-6">
-    <label for="validationServer04" class="form-label text-light">Provincia</label>
-    <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
-      <option selected disabled value="">Elegir...</option>
-      <option>Pichincha</option>
-      <option>Guayas</option>
-      <option>Cuenca</option>
-    </select>
-    <div id="validationServer04Feedback" class="invalid-feedback text-light">
-      Por favor selecciona una provincia válida.
-    </div>
-  </div>
-  <div class="col-12">
-    <div class="form-check">
-    <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
-    <label class="form-check-label text-light" for="invalidCheck3">
-     Aceptar términos y condiciones
-    </label>
-    <div id="invalidCheck3Feedback" class="invalid-feedback text-light">
-      Debes aceptar antes de enviar.
-    </div>
-  </div>
+    <!-- Formulario con validación -->
+    <h3 class="text-center text-light mb-4">Registro del usuario</h3>
+    <form class="row g-3">
+        <div class="col-md-6">
+            <label for="validationServer01" class="form-label text-light">Nombre</label>
+            <input type="text" class="form-control is-valid" id="validationServer01" value="Luisa" required>
+            <div class="valid-feedback text-light">
+            ¡Se ve bien!
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationServer02" class="form-label text-light">Apellido</label>
+            <input type="text" class="form-control is-valid" id="validationServer02" value="Zambrano" required>
+            <div class="valid-feedback text-light">
+            ¡Se ve bien!
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationServer03" class="form-label text-light">Correo electrónico</label>
+            <input type="email" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+            <div id="validationServer03Feedback" class="invalid-feedback text-light">
+            Por favor ingresa un correo válido.
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationServer04" class="form-label text-light">Provincia</label>
+            <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+            <option selected disabled value="">Elegir...</option>
+            <option>Pichincha</option>
+            <option>Guayas</option>
+            <option>Cuenca</option>
+            </select>
+            <div id="validationServer04Feedback" class="invalid-feedback text-light">
+            Por favor selecciona una provincia válida.
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+            <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+            <label class="form-check-label text-light" for="invalidCheck3">
+            Aceptar términos y condiciones
+            </label>
+            <div id="invalidCheck3Feedback" class="invalid-feedback text-light">
+            Debes aceptar antes de enviar.
+            </div>
+        </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+    </form>
 
-  </div>
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">Enviar</button>
-  </div>
-</form>
-
-    <!-- ✅ INSERTAR AQUÍ: BARRA DE PROGRESO -->
+    <!-- BARRA DE PROGRESO -->
     <div class="container my-3">
         <h5 class="text-light">Progreso del pedido</h5>
         <div class="progress" style="height: 25px;">
@@ -393,14 +389,14 @@
         </div>
     </div>
 
-    <!-- ✅ INSERTAR AQUÍ: SPINNER -->
+    <!-- SPINNER -->
     <div class="text-center my-4">
         <div class="spinner-border text-warning" role="status">
         <span class="visually-hidden">Cargando...</span>
         </div>
     </div>
 
-    <!-- ✅ INSERTAR AQUÍ: OFFCANVAS (PANEL LATERAL) -->
+    <!-- OFFCANVAS (PANEL LATERAL) -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasPanel">
         <div class="offcanvas-header">
         <h5 class="offcanvas-title">Panel del Restaurante</h5>
@@ -414,7 +410,7 @@
         </div>
     </div>
 
-    <!-- ✅ INSERTAR AQUÍ: TOAST (MENSAJE EMERGENTE) -->
+    <!-- TOAST (MENSAJE EMERGENTE) -->
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
         <div id="liveToast" class="toast text-dark bg-light border-0" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header bg-success text-white">
@@ -428,78 +424,98 @@
         </div>
     </div>
 
-    <!-- ✅ INSERTAR AQUÍ: ENLACE JS DE BOOTSTRAP Y SCRIPT DE INICIALIZACIÓN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-            // Inicializar TOOLTIP
-            document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+    <h3 class="text-center text-light">Encuesta de satisfacción del servicio</h3>
 
-            // Inicializar POPOVER
-            document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
-
-            // Inicializar TOAST
-            const toastBtn = document.getElementById('toastBtn');
-            const toastLive = document.getElementById('liveToast');
-            if (toastBtn) {
-            const toast = new bootstrap.Toast(toastLive);
-            toastBtn.addEventListener('click', () => toast.show());
-            }
-    </script>
-
-
-<h3 class="text-center text-light">Encuesta de satisfacción del servicio</h3>
-
-  <!-- Horizontal Layout -->
-<div class="row">
-  <div class="col">
-    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
-  </div>
-  <div class="col">
-    <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
-  </div>
-
-  <!-- Vertical Layout -->
-<div class="mb-3">
-  <label for="formGroupExampleInput" class="form-label text-light">Correo electrónico</label>
-  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="nombre@ejemplo.com">
-</div>
-<div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label text-light">Teléfono</label>
-  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Número de contacto">
-</div>
-
-  <!-- Inline Layout -->
-<form class="row row-cols-lg-auto g-3 align-items-center">
-  <div class="col-12">
-    <label class="visually-hidden" for="inlineFormInputGroupUsername">Usuario</label>
-    <div class="input-group">
-      <div class="input-group-text">@</div>
-      <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Usuario">
+    <!-- Horizontal Layout -->
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+        </div>
     </div>
-  </div>
+    <!-- Range input con estilos personalizados -->
+<div class="container mb-4">
+    <label for="customRange1" class="form-range-label">Nivel de satisfacción (1-10)</label>
+    <input type="range" class="form-range" id="customRange1" min="1" max="10" value="5">
+    <div class="form-text">Selecciona tu nivel de satisfacción con nuestro servicio</div>
+    <div class="range-value-indicators">
+        <span>1 - Muy bajo</span>
+        <span>5 - Neutral</span>
+        <span>10 - Excelente</span>
+    </div>
+</div>
 
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </div>
-</form>
+    <!-- Vertical Layout -->
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label text-light">Correo electrónico</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="nombre@ejemplo.com">
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label text-light">Teléfono</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Número de contacto">
+    </div>
 
-<h4 class="text-center text-light">Gracias por visitarnos</h4>
+    <!-- Inline Layout -->
+    <form class="row row-cols-lg-auto g-3 align-items-center">
+        <div class="col-12">
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">Usuario</label>
+            <div class="input-group">
+            <div class="input-group-text">@</div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Usuario">
+            </div>
+        </div>
 
-  <!-- File Input -->
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+    </form>
+
+    <h4 class="text-center text-light">Gracias por visitarnos</h4>
+
+    <!-- File Input -->
     <div class="mb-3 text-center">
         <label for="formFile" class="form-label text-light">Si tienes alguna recomendación de algun platillo envianos la imagen y dejanos un comentario</label>
         <input class="form-control w-50 mx-auto d-block" type="file" id="formFile">
     </div>
 
-  <!-- Floating Labels -->
+    <!-- Floating Labels -->
     <div class="container mb-4">
         <div class="form-floating">
             <textarea class="form-control w-50 mx-auto d-block" placeholder="Dejanos un comentario aqui" id="floatingTextarea"></textarea>
             <label for="floatingTextarea">Comentarios</label>
         </div>
+    </div>
 
+    <!-- ✅ CDN COMPLETO DE BOOTSTRAP (CSS + JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Inicializar componentes después de cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
 
-    <script src="public/vendor/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+            // Popovers
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl)
+            })
+
+            // Toast
+            var toastBtn = document.getElementById('toastBtn');
+            var toastLive = document.getElementById('liveToast');
+            if (toastBtn && toastLive) {
+                var toast = new bootstrap.Toast(toastLive);
+                toastBtn.addEventListener('click', function() {
+                    toast.show();
+                });
+            }
+        });
+    </script>
 
 </body>
 
@@ -511,11 +527,3 @@
     </div>
 </footer>
 </html>
-
-<!-- INTEGRANTES:
-  - Barbara Rodas: Alert, Badge, Breadcrumb, Buttons (varias clases: btn-primary, btn-outline-*, tamaños), Button group, Card (con header, body, footer; por lo menos una tarjeta con imagen), Carousel (carrusel funcional), Collapse / Accordion
-  - Kevin Shagñay: Dropdowns (en nav y en botones), Navs / Tabs / Pills, Navbar completo (responsive con toggler), Pagination, List group, Modal (al menos uno activado por botón)
-  - Marcos Bajaña: Toasts (mostrar al menos un toast), Popovers (ejemplo funcional), Tooltips (ejemplo funcional), Progress, Spinner, Offcanvas (panel lateral)
-  - Nelson Mera: Formulario con validación cliente (Bootstrap validation classes), Inputs: text, email, password, number, url, date, Textarea, Select (<select>) y form-select, Checkboxes y radios (estilos custom), Switch (toggle)
-  - Ginger Banchon: File input (subida), Range input, Input groups (con addons, botones), Floating labels, Form layout: horizontal (grid), vertical y inline, Mostrar mensajes de error / ayuda con invalid-feedback / form-text
--->
