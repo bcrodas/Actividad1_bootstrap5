@@ -1,0 +1,61 @@
+.btn-group {
+    margin: 20px;
+}
+
+.Introducción {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    color: #7db1b8;
+    margin: 15px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.Descripción {
+    font-family: 'Georgia', Courier, monospace;
+    font-size: 18px;
+    color: #d6a3d9;
+    margin: 15px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card {
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(154, 31, 31, 0.732);
+    border-radius: 15px;
+    background: linear-gradient(rgba(98, 65, 22, 0.718), rgba(188, 158, 119, 0.723));
+}
+
+.card-title {
+    color: #f4b460;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #ebdcd3;
+    font-weight: bold;
+}
+
+.img {
+    border-radius: 15px;
+
+ }
+
+ .ver.mas {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f4b460;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.carousel.slide {
+    border-radius: 15px;
+    height: 10%;
+    width: 20%;
+    margin: auto;
+    position: relative;
+}
