@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+
+    <style>
+        body {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('public/img/restaurante.jpg') center/cover no-repeat fixed;
+            min-height: 100vh;
+        }
+    </style>
+
+    <!-- ✅ SOLO CDN DE BOOTSTRAP - ELIMINA EL CSS LOCAL -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/estilos.css">
+</head>
+<body>
+
+    <!-- Navbar Responsive -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Restaurante "Sazón del Saber"</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menú</a>
+                    </li>
+                    <!-- Dropdown en Navbar - KEVIN SHAÑAY -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorías
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Platos Principales</a></li>
+                            <li><a class="dropdown-item" href="#">Entradas</a></li>
+                            <li><a class="dropdown-item" href="#">Postres</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Especiales del Chef</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb existente -->
+    <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Menú</li>
+        </ol>
+    </nav>
+
+    <!-- ✅ BOTÓN PARA ABRIR EL PANEL LATERAL (OFFCANVAS) -->
+    <button class="btn btn-dark m-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasPanel">
+        Menú lateral
+    </button>
+
+    <!-- Botón Perfil con Dropdown -->
+    <div class="position-relative">
+        <div class="dropdown position-absolute top-0 end-0 m-3">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Perfil
+                <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                    <span class="visually-hidden">Nuevas notificaciones</span>
+                </span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Mi Cuenta</a></li>
+                <li><a class="dropdown-item" href="#">Mis Pedidos</a></li>
+                <li><a class="dropdown-item" href="#">Configuración</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h1 class="text-center text-danger">Restaurante "Sazón del Saber"</h1>
+    <h2 class="text-center text-success">Bienvenidos</h2>
+    <p class="Introducción">La mejor comida del mundo la encontrarás aquí</p>
+    <p class="Descripción">¡Disfruta de nuestros platillos!</p>
+
+      <!-- BOTÓN DE FORMULARIO INTEGRADO -->
+    <div class="container text-center mb-4">
+        <a href="formulario.html" class="btn btn-formulario">
+            <i class="bi bi-pencil-square"></i> Formulario de Registro
+        </a>
+    </div>
+    <!-- Botones existentes -->
+    <button class="btn btn-primary">Platos</button>
+    <button class="btn btn-secondary">Reservar</button>
+    <button class="btn btn-success">Ordenar</button>
+    <button class="btn btn-danger">Cancelar</button>
+    <button class="btn btn-warning">Promociones</button>
+    <button class="btn btn-info">Consultar</button>
+    <button class="btn btn-light">Ayuda</button>
+    <button class="btn btn-dark">Cerrar Sesión</button>
+    <button class="btn btn-link">más Información</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Promociones Especiales</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¡Aprovecha nuestras promociones de la semana!</p>
+                    <ul>
+                        <li>Combo Familiar: 20% de descuento</li>
+                        <li>Postre gratis con cualquier plato principal</li>
+                        <li>2x1 en bebidas los martes y jueves</li>
+                    </ul>
+                    <p>Válido hasta el 30 de noviembre.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Aplicar Promoción</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-primary">Nuevos</button>
+        <button type="button" class="btn btn-outline-primary">Recetas</button>
+        <button type="button" class="btn btn-outline-primary">Recepciones</button>
+    </div>
+
+    <!-- Navs / Tabs / Pills -->
+    <div class="container mt-4">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Platos Populares</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Especialidades</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Bebidas</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <p>Nuestros platos más solicitados por nuestros clientes.</p>
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <p>Las creaciones exclusivas de nuestro chef.</p>
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <p>Refrescantes bebidas para acompañar tu comida.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="d-flex justify-content-center gap-2">
+            <button class="btn btn-primary m-2" data-bs-toggle="tooltip" title="Ver perfil del usuario">
+                Perfil
+            </button>
+
+            <button class="btn btn-secondary m-2" data-bs-toggle="popover"
+                    title="Cuenta del cliente"
+                    data-bs-content="Consulta tu saldo y puntos acumulados.">
+                Cuenta
+            </button>
+
+            <button class="btn btn-warning m-2" id="toastBtn">Promociones</button>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Ver Promociones Especiales
+            </button>
+        </div>
+    </div>
+
+    <!-- List Group -->
+    <div class="container mt-4">
+        <h3 class="text-light">Categorías de Platos</h3>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                Platos Principales
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">Entradas</a>
+            <a href="#" class="list-group-item list-group-item-action">Postres</a>
+            <a href="#" class="list-group-item list-group-item-action">Bebidas</a>
+            <a href="#" class="list-group-item list-group-item-action disabled">Especiales del Chef (próximamente)</a>
+        </div>
+    </div>
+
+    <!-- Container existente con cards -->
+    <div class="container">
+        <div class="row">
+            <!-- Fritada -->
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="public/img/fritada.webp" alt="Fritada" class="img-fluid rounded">
+                    <div class="card-body">
+                        <h5 class="card-title">Fritada</h5>
+                        <p class="card-text">Deliciosa fritada con guarnición de llapingachos.</p>
+                        <a href="#" class="ver mas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Ceviche -->
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="public/img/ceviche.webp" class="card-img-top" alt="Ceviche">
+                    <div class="card-body">
+                        <h5 class="card-title">Ceviche</h5>
+                        <p class="card-text">Delicioso ceviche de camarón con chifles.</p>
+                        <a href="#" class="ver mas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Encebollado -->
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="public/img/encebollado.webp" class="card-img-top" alt="Encebollado">
+                    <div class="card-body">
+                        <h5 class="card-title">Encebollado</h5>
+                        <p class="card-text">Delicioso encebollado de pescado con yuca.</p>
+                        <a href="#" class="ver mas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Llapingachos -->
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="public/img/llapingachos.webp" class="card-img-top" alt="Llapingachos">
+                    <div class="card-body">
+                        <h5 class="card-title">Llapingachos</h5>
+                        <p class="card-text">Deliciosos llapingachos de papa con queso.</p>
+                        <a href="#" class="ver mas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Hornado -->
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="public/img/hornado.webp" class="card-img-top" alt="Hornado">
+                    <div class="card-body">
+                        <h5 class="card-title">Hornado</h5>
+                        <p class="card-text">Delicioso hornado de cerdo con mote y ensalada.</p>
+                        <a href="#" class="ver mas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <!-- mote -->
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="public/img/mote.webp" class="card-img-top" alt="Mote">
+                    <div class="card-body">
+                        <h5 class="card-title">Mote</h5>
+                        <p class="card-text">Delicioso mote con chicharrón y ensalada.</p>
+                        <a href="#" class="ver mas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-center text-light">postres y adiciones</h2>
+    
+    <!-- Carousel existente -->
+    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="public/img/promocion3.webp" class="d-block w-100" alt="promocion3">
+            </div>
+            <div class="carousel-item">
+                <img src="public/img/humitas.webp" class="d-block w-100" alt="humitas">
+            </div>
+            <div class="carousel-item">
+                <img src="public/img/yuca.webp" class="d-block w-100" alt="yuca">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Pagination al final de la página -->
+    <div class="container mt-5 mb-5">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Siguiente</a>
+                </li>
+            </ul>
+        </nav>
+   </div>
+
+    <!-- Alert existente -->
+    <div class="alert alert-primary d-flex align-items-center" role="alert">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </svg>
+        <div>
+            Por favor ingrese sus datos correctamente.
+        </div>
+    </div>
+
+    <!-- Formulario con validación -->
+    <h3 class="text-center text-light mb-4">Registro del usuario</h3>
+    <form class="row g-3">
+        <div class="col-md-6">
+            <label for="validationServer01" class="form-label text-light">Nombre</label>
+            <input type="text" class="form-control is-valid" id="validationServer01" value="Luisa" required>
+            <div class="valid-feedback text-light">
+            ¡Se ve bien!
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationServer02" class="form-label text-light">Apellido</label>
+            <input type="text" class="form-control is-valid" id="validationServer02" value="Zambrano" required>
+            <div class="valid-feedback text-light">
+            ¡Se ve bien!
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationServer03" class="form-label text-light">Correo electrónico</label>
+            <input type="email" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+            <div id="validationServer03Feedback" class="invalid-feedback text-light">
+            Por favor ingresa un correo válido.
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationServer04" class="form-label text-light">Provincia</label>
+            <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+            <option selected disabled value="">Elegir...</option>
+            <option>Pichincha</option>
+            <option>Guayas</option>
+            <option>Cuenca</option>
+            </select>
+            <div id="validationServer04Feedback" class="invalid-feedback text-light">
+            Por favor selecciona una provincia válida.
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+            <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+            <label class="form-check-label text-light" for="invalidCheck3">
+            Aceptar términos y condiciones
+            </label>
+            <div id="invalidCheck3Feedback" class="invalid-feedback text-light">
+            Debes aceptar antes de enviar.
+            </div>
+        </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+    </form>
+
+    <!-- BARRA DE PROGRESO -->
+    <div class="container my-3">
+        <h5 class="text-light">Progreso del pedido</h5>
+        <div class="progress" style="height: 25px;">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 70%">
+            70%
+        </div>
+        </div>
+    </div>
+
+    <!-- SPINNER -->
+    <div class="text-center my-4">
+        <div class="spinner-border text-warning" role="status">
+        <span class="visually-hidden">Cargando...</span>
+        </div>
+    </div>
+
+    <!-- OFFCANVAS (PANEL LATERAL) -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasPanel">
+        <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Panel del Restaurante</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+        <p>Opciones del restaurante:</p>
+        <button class="btn btn-outline-primary w-100 mb-2">Ver pedidos</button>
+        <button class="btn btn-outline-success w-100 mb-2">Promociones</button>
+        <button class="btn btn-outline-danger w-100" data-bs-dismiss="offcanvas">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- TOAST (MENSAJE EMERGENTE) -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast text-dark bg-light border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-success text-white">
+            <strong class="me-auto">Restaurante</strong>
+            <small>Ahora mismo</small>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body">
+            ¡Disfruta de nuestras promociones de hoy!
+        </div>
+        </div>
+    </div>
+
+    <h3 class="text-center text-light">Encuesta de satisfacción del servicio</h3>
+
+    <!-- Horizontal Layout -->
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+        </div>
+    </div>
+    <!-- Range input con estilos personalizados -->
+<div class="container mb-4">
+    <label for="customRange1" class="form-range-label">Nivel de satisfacción (1-10)</label>
+    <input type="range" class="form-range" id="customRange1" min="1" max="10" value="5">
+    <div class="form-text">Selecciona tu nivel de satisfacción con nuestro servicio</div>
+    <div class="range-value-indicators">
+        <span>1 - Muy bajo</span>
+        <span>5 - Neutral</span>
+        <span>10 - Excelente</span>
+    </div>
+</div>
+
+    <!-- Vertical Layout -->
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label text-light">Correo electrónico</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="nombre@ejemplo.com">
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label text-light">Teléfono</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Número de contacto">
+    </div>
+
+    <!-- Inline Layout -->
+    <form class="row row-cols-lg-auto g-3 align-items-center">
+        <div class="col-12">
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">Usuario</label>
+            <div class="input-group">
+            <div class="input-group-text">@</div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Usuario">
+            </div>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+    </form>
+
+    <h4 class="text-center text-light">Gracias por visitarnos</h4>
+
+    <!-- File Input -->
+    <div class="mb-3 text-center">
+        <label for="formFile" class="form-label text-light">Si tienes alguna recomendación de algun platillo envianos la imagen y dejanos un comentario</label>
+        <input class="form-control w-50 mx-auto d-block" type="file" id="formFile">
+    </div>
+
+    <!-- Floating Labels -->
+    <div class="container mb-4">
+        <div class="form-floating">
+            <textarea class="form-control w-50 mx-auto d-block" placeholder="Dejanos un comentario aqui" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Comentarios</label>
+        </div>
+    </div>
+
+    <!-- ✅ CDN COMPLETO DE BOOTSTRAP (CSS + JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Inicializar componentes después de cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+
+            // Popovers
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl)
+            })
+
+            // Toast
+            var toastBtn = document.getElementById('toastBtn');
+            var toastLive = document.getElementById('liveToast');
+            if (toastBtn && toastLive) {
+                var toast = new bootstrap.Toast(toastLive);
+                toastBtn.addEventListener('click', function() {
+                    toast.show();
+                });
+            }
+        });
+    </script>
+
+</body>
+
+<footer>
+    <div class="text-center text-light p-3 bg-dark">
+        © 2025 Restaurante "Sazón del Saber". Todos los derechos reservados.
+        <br>
+        Telefono: +593 99 999 9999 | Email: contacto@sazondelsaber.com
+    </div>
+</footer>
+</html>
